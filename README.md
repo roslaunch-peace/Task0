@@ -1,7 +1,7 @@
 # Task0
 Task0 Submission, Deadline - 19th October 2020 11:59 PM
 
-To set the project:
+To setup the project:
 1. Make sure you have installed Turtlesim libraries, if not then git clone it. For more info, checkout eYantra References.
 2. Create a catkin_ws directory, then clone this repository to catkin_ws directory.
 3. Then move to catkin_ws/devel/ and type, source setup.bash
