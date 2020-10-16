@@ -12,7 +12,7 @@ angular_velocity = [0.0, 0.0, 0.8]  # provide angular velocities in x,y,z direct
 node_name = "node_turtle_revolve"  # Node name
 publish_name = "turtle1/cmd_vel"  # Publish topic name
 subscribe_name = "turtle1/pose"  # subscribe topic name
-
+printed = False  # Flag
 
 # Create a class, which has the methods such as __init__ which initialises the program based on the primary constructor
 class TurtleRobot:
@@ -40,6 +40,12 @@ class TurtleRobot:
         if str(temp_msg) == "-0.01":
             self.lin_x = 0.0  # Set the params to 0.0, so that there will be no linear motion over x axis
             self.ang_z = 0.0  # Set the params to 0.0, so that there will be no angular motion over z axis
+	    global printed
+            if printed == False: # Print the Log, if havent printed yet.
+            	rospy.loginfo("Turtle is stopped from rotating")
+		printed = True
+	else:
+            rospy.loginfo("Turtle is rotating at theta as : "+str(temp_msg))
 
     def begin(self):
         # Begin to publish the message
